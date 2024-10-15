@@ -1,0 +1,236 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header {
+    height: 60px;
+    padding: 5px;
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+.header img {
+    width: 50px;
+    height: 50px;
+    mix-blend-mode: multiply;
+}
+.header h3 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+}
+.navbar {
+    width: 100%;
+    position: fixed;
+    top: 60px;
+    background-color: #2F3194;
+    z-index: 999;
+}
+.navbar ul {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    width: 100%;
+    max-width: 300px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+ul li:nth-child(4) {
+    display: none;
+}
+.navbar li {
+    color: #FCB424;
+}
+.main_page {
+    display: grid;
+    width: 100%;
+    grid-template-areas: "aside main main main aside2";
+    padding-top: 15px;
+}
+.main_page aside {
+    padding: 80px 10px 10px 10px;
+    grid-area: aside;
+}
+aside, main {
+    color: white;
+}
+aside .trophy {
+    display: flex;
+    flex-direction: column;
+    background-color: #2F3194;
+    border: 7px solid #FCB424;
+}
+.trophy h1 {
+    font-size: 3.12rem;
+    text-align: center;
+}
+.trophy h3, h2 {
+    background-color: #FCB424;
+    text-align: center;
+}
+.trophy p {
+    text-align: center;
+    font-size: 3.12rem;
+}
+.trophy img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    mix-blend-mode: multiply;
+}
+.main_page main {
+    width: 100%;
+    padding: 80px 10px 10px 10px;
+    grid-area: main;
+}
+main .main_content {
+    padding: 5px;
+    background-color: #2F3194;
+    border: 7px solid #FCB424;
+}
+.main_content .sejarah, .winner {
+    border-radius: 20px;
+    float: left;
+    margin-right: 10px;
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: contain;
+}
+.main_content .starting1 {
+    border-radius: 20px;
+    float: right;
+    margin-left: 10px;
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: contain;
+}
+main .main_content p {
+    text-align: justify;
+}
+main .squad {
+    padding: 5px;
+    background-color: #2F3194;
+    border: 7px solid #FCB424;
+}
+.player-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+}
+.squad img {
+    width: 100%;
+    aspect-ratio: 3/2;
+    object-fit: contain;
+    
+}
+.main_page .aside2 {
+    color: black;
+    padding: 80px 10px 10px 10px;
+    grid-area: aside2;
+}
+.aside2 .news {
+    color: white;
+    padding: 5px;
+    background-color: #2F3194;
+    border: 7px solid #FCB424;
+}
+.news img {
+    border-radius: 20px;
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: contain;
+}
+.news p {
+    text-align: justify;
+    margin-top: 10px;
+    font-size: 20px;
+}
+.footer {
+    color: white;
+    background-color: black;
+    height: 50px;
+    text-align: center;
+    padding: 5px;
+    font-size: larger;
+}
+
+@media only screen and (max-width: 428px) {
+    .main_page {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .header, .navbar {
+        position: fixed;
+    }
+
+    .navbar ul .hide {
+        display: block;
+    }
+
+    .main_page aside .trophy {
+        grid-area: none;
+        padding: 10px;
+        order: 1;
+    }
+
+    .main_page main {
+        grid-area: none;
+        padding: 10px;
+        order: 2;
+    }
+
+    .main_content .sejarah {
+        float: none;
+        width: 100%;
+        max-width: 428px;
+    }
+    
+    .main_content .starting1 {
+        margin: 0;
+        float: none;
+        width: 100%;
+        max-width: 428px;
+    }
+
+    .main_content .winner {
+        margin: 0;
+        float: none;
+        width: 100%;
+        max-width: 428px;
+    }
+
+    .main_page .aside2 {
+        grid-area: none;
+        padding: 10px;
+        order: 3;
+    }
+
+    /* Tampilkan hanya Total Trophy */
+    .trophy img, .trophy p, .trophy h2 {
+        display: none;
+    }
+
+    /* Hilangkan bagian Squad */
+    main .squad {
+        display: none;
+    }
+
+    .news p {
+        text-align: center;
+    }
+
+    .news img{
+        border-radius: 0;
+        width: 100%;
+        max-width: 428px;
+    }
+}
